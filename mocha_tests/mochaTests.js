@@ -1,25 +1,25 @@
 'use strict'
 const path = require('path');
-const chai =  require('chai');
+const chai = require('chai');
 const expect = chai.expect;
 const chaiAsPromised = require('chai-as-promised');
 const readData = require(path.resolve('lib/readData'));
 chai.use(chaiAsPromised);
 
-describe('Array', function() {
-    describe('#indexOf()', function() {
-        it('should return -1 when the value is not present', function() {
-            expect([1,2,3].indexOf(4)).to.be.equal(-1);
+describe('Array', function () {
+    describe('#indexOf()', function () {
+        it('should return -1 when the value is not present', function () {
+            expect([1, 2, 3].indexOf(4)).to.be.equal(-1);
         });
     });
 });
 let myPromise = new Promise((resolve, reject) => {
-    setTimeout(function() {
+    setTimeout(function () {
         resolve('Success!');
     }, 250);
 });
 
-describe('ReadData', function() {
+describe('ReadData', function () {
     it('should read data from properties file', () => {
         let data = readData('somefile.properties');
         expect(data).to.be.equal('data from properties file');
@@ -40,15 +40,21 @@ describe('ReadData', function() {
         expect(data).to.be.equal('data from yml file');
     });
 
-    it('should read data from xlsx file', () => {
+    it('should read data from xlsx file',() => {
         let data = readData('somefile.xlsx');
         expect(data).to.be.equal('data from xlsx file');
     });
 });
 
-describe('myPromise', function() {
-   it('should return "Success!" eventually', () => {
-       expect(myPromise).to.eventually.be.equal('Success!');
-   });
+describe('myPromise', function () {
+    it('should return "Success!" eventually', () => {
+        expect(myPromise).to.eventually.be.equal('Success!');
+    });
+
+    it('should return "Success!" eventually 2', () => {
+        myPromise.then((promiseValue) => {
+            expect(promiseValue).to.be.equal('Success!');
+        });
+    });
 });
 

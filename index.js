@@ -1,13 +1,21 @@
 'use strict';
 
-class someClass {
-    doSomething() {
-        return 'I did something !';
+class calculator {
+    addUs2(a, b) {
+        return a + b;
     }
 
-    oneMoreThingToDo() {
-        return 'I did something else !';
+    addUs3(a, b, c) {
+        return a + b + c;
+    }
+
+    multiplyUs2(a, b) {
+        return a * b;
+    }
+
+    multiplyUs3(a, b, c) {
+        return a * b * c;
     }
 }
 
-module.exports = someClass;
+module.exports = calculator;

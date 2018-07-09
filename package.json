@@ -10,7 +10,7 @@
     "test-mocha": "node_modules\\.bin\\mocha ./mocha_tests"
   },
   "author": {
-    "name": "Matsvei Murashka"
+    "name": "Alexey Kachemirov"
   },
   "license": "",
   "dependencies": {
