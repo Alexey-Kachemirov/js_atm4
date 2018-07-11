@@ -1,21 +1,26 @@
 'use strict';
 
 class calculator {
-    addUs2(a, b) {
-        return a + b;
+    sum() {
+        var result = 0;
+
+        for (var i = 0; i < arguments.length; i++) {
+            result += arguments[i];
+        }
+
+        return result;
     }
 
-    addUs3(a, b, c) {
-        return a + b + c;
+    mult() {
+        var result = 1;
+
+        for (var i = 0; i < arguments.length; i++) {
+            result *= arguments[i];
+        }
+
+        return result;
     }
 
-    multiplyUs2(a, b) {
-        return a * b;
-    }
-
-    multiplyUs3(a, b, c) {
-        return a * b * c;
-    }
 }
 
 module.exports = calculator;
